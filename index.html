@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>SETECOLE — Carte nationale des écoles du Sénégal</title>
+<link href="https://unpkg.com" rel="preconnect"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
+</link>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/favicon.png" rel="apple-touch-icon"/>
+
+<style id="setecole-active-nav-critical">
+.navlinks a.is-current-page,.navlinks a[aria-current="page"]{background:linear-gradient(135deg,#0f766e,#0ea5e9)!important;color:#fff!important;box-shadow:0 8px 20px rgba(15,118,110,.32)!important;position:relative!important}
+.navlinks a.is-current-page::after,.navlinks a[aria-current="page"]::after{content:"";position:absolute;left:22%;right:22%;bottom:4px;height:2px;border-radius:999px;background:#fff}
+@media(max-width:760px){.navlinks a.is-current-page,.navlinks a[aria-current="page"]{display:block!important;border-radius:15px!important;padding:12px 14px!important}}
+</style>
+</head>
+<body>
+<nav class="topbar"><a class="brand" href="index.html"><img alt="Logo SETECOLE" src="assets/logo-setecole.svg"/><span>SETECOLE</span></a><button class="menu-btn" id="menuBtn">☰</button><div class="navlinks"><a aria-current="page" class="is-current-page" href="index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="ressources.html">Ressources</a><a href="publireportages.html">Publireportages</a><a href="orientation.html">Orientation</a><a href="marketplace.html">Marketplace</a><a href="rejoindre-setecole.html">Inscrire une école</a><a href="services.html">Services</a></div></nav>
+<header class="hero section" id="accueil">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<p class="eyebrow">Le portail éducatif sénégalais</p>
+<h1>Trouvez une école, apprenez, orientez-vous et équipez-vous au même endroit.</h1>
+<p class="lead">SETECOLE veut dire « chercher une école » en wolof. La plateforme réunit : carte interactive des écoles, actualités, ressources didactiques, publireportages vidéo, aide à l'orientation, marketplace éducative et espaces publicitaires pour les librairies, papeteries, centres de formation et autres acteurs du secteur éducatif.</p>
+<div class="hero-search"><input id="globalSearch" placeholder="Rechercher une école, un cours, une actualité..."/><button class="btn primary" id="globalSearchBtn">Rechercher</button></div>
+<div class="hero-actions"><a class="btn primary" href="#ecoles">Explorer la carte</a><a class="btn" href="ressources.html">Voir les cours PDF</a><a class="btn" href="orientation.html">Demander à MIA</a></div>
+<div aria-label="Chiffres clés de SETECOLE" class="metrics national-metrics">
+<article><small>🏫 Réseau national</small><b id="schoolCount">1 422</b><span>écoles géolocalisées</span></article>
+<article><small>🏛️ Couverture</small><b>14</b><span>Inspections d’académie</span></article>
+<article><small>🗺️ Couverture</small><b>45</b><span>départements couverts</span></article>
+<article><small>📍 Maillage territorial</small><b>232</b><span>communes couvertes</span></article>
+<article><small>🏫 Statut réel</small><b>1 129</b><span>écoles publiques</span></article>
+<article><small>🏢 Statut réel</small><b>293</b><span>écoles privées</span></article>
+<article class="fictive-kpi"><small>🎓 Donnée fictive</small><b>231</b><span>établissements secondaires</span></article>
+<article class="fictive-kpi"><small>👩🏾‍🎓 Donnée fictive</small><b>1 479 906</b><span>élèves recensés</span></article>
+<article><small>📚 Contenus</small><b>48</b><span>ressources démo</span></article>
+<article><small>🎥 Découverte</small><b>12</b><span>vidéos écoles</span></article>
+<article><small>🤖 Assistance</small><b>24/7</b><span>MIA orientation</span></article>
+</div>
+</div>
+</header>
+<main>
+<section class="section map-section" id="ecoles">
+<div class="section-head"><p class="eyebrow">Carte interactive</p><h2>Écoles proches, itinéraires et fiches enrichies</h2><p>Filtrez les établissements par inspection d’académie, département, type, commune et cycle. Cliquez sur une école pour ouvrir sa fiche.</p></div>
+<div class="map-layout">
+<aside class="panel filters">
+<label>Recherche<input id="searchInput" placeholder="Nom, commune, cycle"/></label>
+<label>Inspection d’académie<select id="iaFilter"><option value="">Toutes les IA</option></select></label>
+<label>Département<select id="departmentFilter"><option value="">Tous</option></select></label>
+<label>Commune<select id="communeFilter"><option value="">Toutes</option></select></label>
+<label>Type<select id="typeFilter"><option value="">Tous</option><option>Public</option><option>Privé</option></select></label>
+<label>Cycle<select id="cycleFilter"><option value="">Tous</option></select></label>
+<button class="btn full" id="resetBtn">Réinitialiser</button>
+<div class="ad-card small"><b>📚 Librairie partenaire</b><span>-20% sur manuels BFEM cette semaine</span></div>
+</aside>
+<div class="map-card"><div id="map"></div><div class="route-panel" id="routePanel">Cliquez sur une école pour voir la fiche, comparer ou lancer un itinéraire.</div></div>
+<aside class="panel mia-panel">
+<p class="eyebrow">MIA 2.0</p><h3>Assistant scolaire sénégalais</h3>
+<div class="chat-messages" id="chatMessages"></div>
+<div class="chat-row"><input id="aiQuery" placeholder="Ex : écoles les plus proches"/><button class="btn primary" id="aiBtn">OK</button></div>
+<div class="chips"><button data-q="écoles les plus proches de moi">Plus proches</button><button data-q="meilleures écoles par réussite">Meilleures</button><button data-q="écoles publiques">Publiques</button><button data-q="orientation scientifique">Orientation</button></div>
+</aside>
+</div>
+<div class="schools-grid" id="schoolsGrid"></div>
+</section>
+</main>
+<div class="modal" id="detailModal"><div class="modal-content" id="detailContent"></div></div>
+<footer class="site-footer"><div class="footer-credit"><img src="assets/logo-novateur221.png" alt="Logo Novateur221"/><span>© 2026 Novateur221</span></div><p>SETECOLE — Chercher une école, apprendre et s’orienter au Sénégal.</p></footer><button aria-label="Ouvrir MIA" class="mia-fab" id="miaFab">MIA</button><section class="mia-widget" id="miaWidget"><header><div><b>MIA</b><small>Assistant SetEcole</small></div><button id="miaClose">×</button></header><div class="mia-widget-messages" id="miaWidgetMessages"><div class="msg bot">Bonjour 👋 Je peux vous aider à trouver une école, une ressource ou une orientation.</div></div><div class="mia-widget-row"><input id="miaWidgetInput" placeholder="Posez votre question..."/><button id="miaWidgetSend">➤</button></div></section><script src="site.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data.js"></script>
+<script src="boundaries.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

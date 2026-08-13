@@ -1,0 +1,17 @@
+FORMULAIRE D’INSCRIPTION SETECOLE — NETLIFY FORMS
+
+Le formulaire « inscription-ecole-setecole » est configuré pour Netlify Forms.
+
+MISE EN LIGNE
+1. Décompressez ce ZIP.
+2. Déployez le dossier complet sur Netlify (Netlify Drop ou dépôt Git).
+3. Effectuez au moins un nouveau déploiement après l’ajout du formulaire.
+4. Dans le tableau de bord Netlify, ouvrez Forms : « inscription-ecole-setecole » doit apparaître.
+5. Dans Form notifications, ajoutez novateur221@gmail.com pour recevoir chaque demande par email.
+
+IMPORTANT
+- Le formulaire ne peut pas envoyer réellement lorsqu’il est ouvert comme simple fichier local.
+- Les documents et photos sont transmis comme pièces jointes au formulaire Netlify.
+- La protection anti-spam (honeypot) est déjà activée.
+- Une page de confirmation inscription-reussie.html est incluse.
+- Un lien email de secours est affiché dans la dernière étape.

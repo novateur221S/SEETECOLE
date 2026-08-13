@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Inscrire une école — SETECOLE</title><link href="style.css" rel="stylesheet"/>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
+<link href="assets/favicon.png" rel="apple-touch-icon"/>
+<style id="setecole-active-nav-critical">
+.navlinks a.is-current-page,.navlinks a[aria-current="page"]{background:linear-gradient(135deg,#0f766e,#0ea5e9)!important;color:#fff!important;box-shadow:0 8px 20px rgba(15,118,110,.32)!important;position:relative!important}
+.navlinks a.is-current-page::after,.navlinks a[aria-current="page"]::after{content:"";position:absolute;left:22%;right:22%;bottom:4px;height:2px;border-radius:999px;background:#fff}
+@media(max-width:760px){.navlinks a.is-current-page,.navlinks a[aria-current="page"]{display:block!important;border-radius:15px!important;padding:12px 14px!important}}
+</style>
+</head><body><nav class="topbar"><a class="brand" href="index.html"><img alt="Logo SETECOLE" src="assets/logo-setecole.svg"/><span>SETECOLE</span></a><button class="menu-btn" id="menuBtn">☰</button><div class="navlinks"><a href="index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="ressources.html">Ressources</a><a href="publireportages.html">Publireportages</a><a href="orientation.html">Orientation</a><a href="marketplace.html">Marketplace</a><a aria-current="page" class="is-current-page" href="rejoindre-setecole.html">Inscrire une école</a><a href="services.html">Services</a></div></nav><main><section class="page-hero"><p class="eyebrow">SETECOLE</p><h1>Inscrire une école</h1><p>Envoyez gratuitement les informations de votre établissement à l’équipe SETECOLE</p></section><section class="section"><div class="form-shell"><div class="form-benefits"><span class="tag">Rejoindre SetEcole</span><h2>Présentez votre établissement</h2><p>Complétez le formulaire : votre demande sera reçue et vérifiée par l’équipe Novateur221 avant publication.</p><ul><li>Visibilité sur la carte</li><li>Photos et présentation</li><li>Demandes d’information</li><li>Publireportages et actualités</li></ul></div><form accept-charset="UTF-8" action="inscription-reussie.html" class="school-form" data-netlify="true" enctype="multipart/form-data" id="schoolForm" method="POST" name="inscription-ecole-setecole" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="inscription-ecole-setecole"/>
+<p aria-hidden="true" class="form-honey"><label>Ne pas remplir : <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
+<input name="Objet" type="hidden" value="Nouvelle demande d'inscription d'une école sur SETECOLE"/>
+<div aria-label="Progression du formulaire" class="form-progress"><span id="progressBar"></span></div>
+<p aria-live="polite" class="form-status" id="formStatus">Étape 1 sur 4 — Informations générales</p>
+<div class="form-step active" data-step-title="Informations générales">
+<h3>1. Informations générales</h3>
+<label>Nom de l’établissement<input autocomplete="organization" name="Nom_etablissement" placeholder="Ex. École Les Pionniers" required=""/></label>
+<label>Statut<select name="Statut" required=""><option value="">Sélectionner</option><option>Public</option><option>Privé</option><option>Associatif</option><option>Confessionnel</option></select></label>
+<fieldset><legend>Niveaux proposés — plusieurs choix possibles</legend><div class="check-grid">
+<label><input name="Niveaux" type="checkbox" value="Crèche"/> Crèche</label><label><input name="Niveaux" type="checkbox" value="Maternelle"/> Maternelle</label><label><input name="Niveaux" type="checkbox" value="Élémentaire"/> Élémentaire</label><label><input name="Niveaux" type="checkbox" value="Collège"/> Collège</label><label><input name="Niveaux" type="checkbox" value="Lycée"/> Lycée</label><label><input name="Niveaux" type="checkbox" value="Formation professionnelle"/> Formation professionnelle</label><label><input name="Niveaux" type="checkbox" value="Supérieur"/> Supérieur</label>
+</div></fieldset>
+<button class="btn primary next" type="button">Continuer</button>
+</div>
+<div class="form-step" data-step-title="Localisation et contact">
+<h3>2. Localisation et contact</h3>
+<div class="form-grid-two"><label>Région<input autocomplete="address-level1" name="Region" placeholder="Ex. Dakar" required=""/></label><label>Département<input name="Departement" placeholder="Ex. Pikine" required=""/></label></div>
+<div class="form-grid-two"><label>Commune<input autocomplete="address-level2" name="Commune" required=""/></label><label>Quartier / village<input name="Quartier_village" placeholder="Localité précise"/></label></div>
+<label>Lien Google Maps<input name="Lien_Google_Maps" placeholder="https://maps.google.com/..." type="url"/></label>
+<button class="btn geo-btn" id="geoBtn" type="button">📍 Utiliser ma position actuelle</button>
+<input id="schoolLatitude" name="Latitude" type="hidden"/><input id="schoolLongitude" name="Longitude" type="hidden"/>
+<p aria-live="polite" class="geo-status" id="geoStatus"></p>
+<div class="form-grid-two"><label>Téléphone / WhatsApp<input autocomplete="tel" name="Telephone" placeholder="+221 ..." required="" type="tel"/></label><label>Email<input autocomplete="email" name="Email" placeholder="ecole@exemple.sn" required="" type="email"/></label></div>
+<label>Nom du responsable<input autocomplete="name" name="Responsable" required=""/></label>
+<div class="form-actions"><button class="btn prev" type="button">Retour</button><button class="btn primary next" type="button">Continuer</button></div>
+</div>
+<div class="form-step" data-step-title="Présentation et services">
+<h3>3. Présentation et services</h3>
+<label>Présentation de l’établissement<textarea name="Presentation" placeholder="Historique, projet pédagogique, capacités, résultats..." required="" rows="6"></textarea></label>
+<fieldset><legend>Services disponibles</legend><div class="check-grid">
+<label><input name="Services" type="checkbox" value="Cantine"/> Cantine</label><label><input name="Services" type="checkbox" value="Transport"/> Transport</label><label><input name="Services" type="checkbox" value="Internat"/> Internat</label><label><input name="Services" type="checkbox" value="Bibliothèque"/> Bibliothèque</label><label><input name="Services" type="checkbox" value="Laboratoire"/> Laboratoire</label><label><input name="Services" type="checkbox" value="Salle informatique"/> Salle informatique</label><label><input name="Services" type="checkbox" value="Sport"/> Sport</label><label><input name="Services" type="checkbox" value="Accessibilité"/> Accessibilité</label>
+</div></fieldset>
+<div class="form-grid-two"><label>Effectif approximatif<input inputmode="numeric" min="0" name="Effectif" type="number"/></label><label>Frais annuels indicatifs (FCFA)<input inputmode="numeric" min="0" name="Frais_annuels" type="number"/></label></div>
+<div class="form-actions"><button class="btn prev" type="button">Retour</button><button class="btn primary next" type="button">Continuer</button></div>
+</div>
+<div class="form-step" data-step-title="Documents et validation">
+<h3>4. Documents et validation</h3>
+<label>Document de renseignement de l’école <small>(PDF, DOC ou DOCX — facultatif)</small><input accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="Document_ecole" type="file"/></label>
+<label>Photos de l’établissement <small>(JPG, PNG ou WEBP — plusieurs fichiers possibles)</small><input accept="image/jpeg,image/png,image/webp" multiple="" name="Photos_ecole" type="file"/></label>
+<label class="consent-line"><input name="Autorisation" required="" type="checkbox" value="Oui"/> Je certifie être autorisé(e) à transmettre ces informations et j’accepte leur vérification avant publication.</label>
+<p class="form-note">🔒 Envoi sécurisé par Netlify Forms. Les informations sont vérifiées avant leur publication sur SETECOLE.</p>
+<p class="form-fallback">Un problème d’envoi ? <a href="mailto:novateur221@gmail.com" id="emailFallback">Écrire directement à Novateur221</a></p>
+<div class="form-actions"><button class="btn prev" type="button">Retour</button><button class="btn primary" id="schoolSubmit" type="submit">Envoyer la demande</button></div>
+</div>
+</form></div></section></main><footer class="site-footer"><div class="footer-credit"><img alt="Logo Novateur221" src="assets/logo-novateur221.png"/><span>© 2026 Novateur221</span></div><p>SETECOLE — Chercher une école, apprendre et s’orienter au Sénégal.</p></footer><script src="form.js"></script><button aria-label="Ouvrir MIA" class="mia-fab" id="miaFab">MIA</button><section class="mia-widget" id="miaWidget"><header><div><b>MIA</b><small>Assistant SetEcole</small></div><button id="miaClose">×</button></header><div class="mia-widget-messages" id="miaWidgetMessages"><div class="msg bot">Bonjour 👋 Je peux vous aider à trouver une école, une ressource ou une orientation.</div></div><div class="mia-widget-row"><input id="miaWidgetInput" placeholder="Posez votre question..."/><button id="miaWidgetSend">➤</button></div></section><script src="site.js"></script></body></html>
